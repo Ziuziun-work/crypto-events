@@ -1,0 +1,9 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "Ubuntu", sans-serif;
+  --content-width: 1312px;
+  --container-offset: 26px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+}

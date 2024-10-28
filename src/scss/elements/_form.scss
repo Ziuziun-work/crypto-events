@@ -1,0 +1,306 @@
+.form {
+  &__row {
+    width: 100%;
+    display: block;
+    position: relative;
+    @include mb(24px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      @include bg-cover;
+      z-index: 1;
+    }
+
+    &.input-email {
+      &::before {
+        background-image: url(../img/icons/mail.svg);
+      }
+    }
+    &.input-event-name {
+      &::before {
+        background-image: url(../img/icons/id_card.svg);
+      }
+    }
+    &.input-event-date {
+      &::before {
+        background-image: url(../img/icons/calendar_today_dark.svg);
+      }
+    }
+    &.input-event-website {
+      &::before {
+        background-image: url(../img/icons/language.svg);
+      }
+    }
+    &.input-promocode {
+      &::before {
+        background-image: url(../img/icons/confirmation_number.svg);
+      }
+    }
+    &.input-event-category {
+      &::before {
+        background-image: url(../img/icons/widgets.svg);
+      }
+    }
+    &.input-event-info {
+      &::before {
+        background-image: url(../img/icons/info.svg);
+      }
+    }
+    &.input-media {
+      &::before {
+        background-image: url(../img/icons/handshake.svg);
+      }
+    }
+    &-textarea {
+      &::before {
+        left: 24px;
+        top: 20px;
+        transform: none;
+        width: 24px;
+        height: 24px;
+      }
+
+      .form__textarea {
+        border-radius: 32px;
+      }
+
+      &.input-event-info {
+        .form__textarea {
+          height: 130px;
+        }
+      }
+      &.input-media {
+        .form__textarea {
+          height: 86px;
+        }
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    left: 58px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: text;
+    transition: top 0.2s ease-in-out, left 0.2s ease-in-out,
+      font-size 0.2s ease-in-out;
+  }
+
+  &__input:focus ~ .form__label,
+  &__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+    top: 4px;
+    transform: none;
+    font-size: 14px;
+  }
+
+  &__input {
+    color: $dark;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 24px 58px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 100px;
+    background-color: $white;
+    box-shadow: -5px 4px 16.8px 0px rgba(0, 0, 0, 0.08);
+    height: 64px;
+
+    &.wpcf7-not-valid {
+      border-bottom: 1px solid $red;
+    }
+  }
+
+  &__textarea {
+    color: $dark;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 24px 58px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 100px;
+    background-color: $white;
+    box-shadow: -5px 4px 16.8px 0px rgba(0, 0, 0, 0.08);
+    height: 64px;
+    resize: none;
+    overflow: hidden;
+
+    &.wpcf7-not-valid {
+      border-bottom: 1px solid $red;
+    }
+  }
+
+  &__submit {
+    margin-top: 32px;
+  }
+
+  .new-select {
+    height: 64px;
+    color: $dark;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: -5px 4px 16.8px 0px rgba(0, 0, 0, 0.08);
+    border: none;
+    &:after {
+      background-image: url(../img/arrows/keyboard_arrow_down.svg);
+    }
+
+    &.on {
+      &:after {
+        background-image: url(../img/arrows/keyboard_arrow_up.svg);
+      }
+    }
+
+    &__list {
+      top: 70px;
+    }
+  }
+}
+
+.modal {
+  max-width: 1312px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #e2efff 0%, #faf7fc 100%);
+
+  &__form {
+    @include flexColumn;
+    align-items: flex-start;
+    width: 100%;
+
+    .form {
+      width: 100%;
+    }
+  }
+
+  &__top {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    color: $dark;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: linear-gradient(274deg, #9c22ff 5.22%, #2285ff 93.13%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    color: $dark;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    p {
+      @include mb(14px);
+    }
+  }
+
+  &__success {
+    @include flexColumn;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__image {
+    &-check {
+      width: 150px;
+      height: 150px;
+      flex-shrink: 0;
+      border-radius: 200px;
+      overflow: hidden;
+      box-shadow: -14.089px 11.271px 47.34px 0px rgba(34, 133, 255, 0.25);
+    }
+  }
+
+  .graph-modal__close {
+    @include bg-cover;
+    background-image: url(../img/icons/close.svg);
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    right: -18px;
+    top: -18px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: auto 613px;
+    column-gap: 45px;
+  }
+
+  &__image {
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  &__categories {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include flexCBetween;
+    column-gap: 32px;
+    width: 100%;
+  }
+
+  &__category {
+    border-radius: 16px;
+    opacity: 0.1;
+    background: linear-gradient(274deg, #9c22ff 5.22%, #2285ff 93.13%);
+    box-shadow: -5px 4px 16.8px 0px rgba(0, 0, 0, 0.08);
+    height: 10px;
+    width: 100%;
+
+    &.active {
+      opacity: 1;
+      background: linear-gradient(274deg, #9c22ff 5.22%, #2285ff 93.13%);
+      box-shadow: -5px 4px 16.8px 0px rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+
+.wpcf7-not-valid-tip,
+div.wpcf7 .ajax-loader,
+.wpcf7-response-output {
+  display: none !important;
+}

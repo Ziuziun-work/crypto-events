@@ -1,0 +1,28 @@
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 40px 40px 0px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(274deg, #9c22ff 5.22%, #2285ff 93.13%);
+  backdrop-filter: blur(8.5px);
+
+  &__container {
+    @include flexCBetween;
+  }
+
+  &__button {
+    background: none;
+    background-color: $white;
+
+    span {
+      background: linear-gradient(274deg, #9c22ff 5.22%, #2285ff 93.13%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .nav__link {
+    color: $white;
+  }
+}
