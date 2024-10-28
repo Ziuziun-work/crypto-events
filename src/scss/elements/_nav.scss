@@ -1,0 +1,23 @@
+.nav {
+  &__list {
+    @include flexCenter;
+    column-gap: 32px;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    color: $dark;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    // @include transition(color);
+
+    // &:hover {
+    //     color: $red;
+    // }
+  }
+}
