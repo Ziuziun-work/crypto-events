@@ -20,3 +20,9 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
+@media screen and (max-width: $mob) {
+  .h2 {
+    font-size: 40px;
+  }
+}

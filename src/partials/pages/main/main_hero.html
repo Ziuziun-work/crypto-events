@@ -44,6 +44,13 @@
         <div class="events__subtext">All crypto events</div>
         <h2 class="events__title h2">To look forward to <span>in 2024 / 2025</span></h2>
         <div class="events__categories">
+            <div class="select__wrapper select-filter select__wrapper-head">
+                <select class="select events__category">
+                    <option disabled>Filters</option>
+                    <option value="">Filters</option>
+                    <option value="">Filters</option>
+                </select>
+            </div>
             <div class="select__wrapper select-category">
                 <select class="select events__category">
                     <option disabled>Category</option>
@@ -72,7 +79,7 @@
                     <option value="">Main Media Partner</option>
                 </select>
             </div>
-            <div class="checkbox events__category">
+            <div class="checkbox events__category select__wrapper-checkbox">
                 <input class="custom-checkbox" type="checkbox" id="events" name="events" value="events">
                 <label for="events">Show past Events</label>
             </div>
@@ -214,6 +221,11 @@
                     </div>
                 </div>
             </div>
+            <button class="btn-reset events__button btn1">
+                <span>Load More</span>
+                <img loading="lazy" src="img/arrows/keyboard_arrow_down_grey.svg" class="image" width="" height=""
+                    alt="">
+            </button>
         </div>
     </div>
 </section>
